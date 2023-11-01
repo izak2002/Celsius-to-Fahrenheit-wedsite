@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temperature Converter</title>
+<style>
+body {
+  font-family: sans-serif;
+  background-color:  blue;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #ccc;
+}
+
+span {
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>Temperature Converter</h1>
+
+<input type="number" id="inputCelsius" placeholder="Enter temperature in Celsius">
+<input type="number" id="inputFahrenheit" placeholder="Enter temperature in Fahrenheit">
+
+<button type="button" id="convertButton">Convert</button>
+
+<span id="outputCelsius"></span>
+<span id="outputFahrenheit"></span>
+
+<script>
+function temperatureConverter() {
+  // Get the input values
+  var celsiusInput = document.getElementById("inputCelsius").value;
+  var fahrenheitInput = document.getElementById("inputFahrenheit").value;
+
+  // Convert Celsius to Fahrenheit
+  var fahrenheit = (celsiusInput * 9 / 5) + 32;
+
+  // Convert Fahrenheit to Celsius
+  var celsius = (fahrenheit - 32) * 5 / 9;
+
+  // Display the converted values
+  document.getElementById("outputCelsius").innerHTML = celsius + "°C";
+  document.getElementById("outputFahrenheit").innerHTML = fahrenheit + "°F";
+}
+
+// Add an event listener to the convert button
+document.getElementById("convertButton").addEventListener("click", temperatureConverter);
+</script>
+</body>
